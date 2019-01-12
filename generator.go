@@ -81,7 +81,7 @@ func SendJson(args interface{}, w http.ResponseWriter) {
 }
 
 func main() {
-	db, err := sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/my_test?charset=utf8")
+	db, err := sql.Open("mysql", "{{.ConnString}}")
 	if err != nil {
 		fmt.Println(err)
 	}
